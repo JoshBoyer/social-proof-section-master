@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: https://github.com/JoshBoyer/3-column-preview-card.git
-- Live Site URL: https://joshboyer.github.io/3-column-preview-card/
+- Solution URL: https://github.com/JoshBoyer/social-proof-section-master.git
+- Live Site URL: https://joshboyer.github.io/social-proof-section-master/
 
 ## My process
 
