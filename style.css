@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+
+:root {
+  --colorDarkMagenta: hsl(
+    300,
+    43%,
+    22%
+  ); /* heading text, reviews text, card backgrounds,*/
+  --colorSoftPink: hsl(333, 80%, 67%); /* verified text*/
+  --colorDarkGreyMagenta: hsl(303, 10%, 53%);
+  --colorLightGreyMagenta: hsl(300, 24%, 96%); /* reviews background */
+  --colorWhite: hsl(0, 0%, 100%);
+
+  --fontSize: 10px; /* Site font 15px but prefer to work with base 10px for easier em and rem calcs (i.e. 1.5rem = 15px)*/
+  --fontFamily: "Spartan", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: var(--fontSize);
+  font-family: var(--fontFamily);
+}
+
+body {
+  background-color: var(--colorWhite);
+}
+
+main {
+  /* background-color: purple; */
+  background-image: url("./images/bg-pattern-top-mobile.svg"),
+    url("./images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat no-repeat;
+  background-size: contain;
+  background-position: top, bottom;
+  width: 375px;
+  padding: 7.7rem 2.4em;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.header__heading {
+  font-size: 3rem;
+  line-height: 3.3rem;
+  font-weight: 700;
+  color: var(--colorDarkMagenta);
+  text-align: center;
+  /* padding: 0 4rem;  QUESTION: I don't know which approach to achive the correct number of charaters per line is using padding or width with ch units?*/
+  width: 14ch;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+.header__content {
+  font-size: 1.5rem;
+  font-weight: normal;
+  letter-spacing: -0.03em;
+  line-height: 2.4rem;
+  color: var(--colorDarkGreyMagenta);
+  text-align: center;
+  width: 26ch;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.reviews {
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 3.5rem;
+}
+
+.review {
+  background: var(--colorLightGreyMagenta);
+  padding: 1.5rem 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.6em;
+  border-radius: 0.8em;
+}
+.review__stars {
+  padding-bottom: 1.4em;
+}
+
+.review__content {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--colorDarkMagenta);
+}
+
+.testimonials {
+  display: flex;
+  flex-flow: column;
+}
+.testimonial {
+  border-radius: 0.8em;
+  background-color: var(--colorDarkMagenta);
+  padding: 4em 3.2em;
+  color: var(--colorWhite);
+  margin-bottom: 1.6em;
+}
+
+.testimonial__thumb {
+  border-radius: 50%;
+  height: 4rem;
+  margin-right: 2rem;
+}
+
+.testimonial__header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 3em;
+}
+
+.testimonial__heading {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 145%;
+}
+
+.testimonial__verified {
+  display: block;
+  font-weight: 400;
+  color: var(--colorSoftPink);
+}
+
+.testimonial__content {
+  font-size: 1.5rem;
+  line-height: 155%;
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    /* background-color: purple; */
+    background-image: url("./images/bg-pattern-top-desktop.svg"),
+      url("./images/bg-pattern-bottom-desktop.svg");
+    background-size: unset;
+    background-position: top left, bottom right;
+    width: 1110px;
+    flex-flow: row wrap;
+    padding: 12.5rem 16.5rem;
+  }
+
+  .header {
+    flex-basis: 50%;
+  }
+
+  .header__heading {
+    font-size: 4.8rem;
+    line-height: 100%;
+    text-align: left;
+    width: 14ch;
+    margin: unset;
+    padding-bottom: 1rem;
+  }
+  .header__content {
+    font-size: 1.5rem;
+    text-align: left;
+    margin: unset;
+    width: 36ch;
+    line-height: 160%;
+  }
+
+  .reviews {
+    flex-basis: 50%;
+    padding-bottom: unset;
+    align-items: flex-end;
+  }
+
+  .review {
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2em 3.2em;
+    width: 44.4rem;
+  }
+
+  .review:nth-child(1) {
+    transform: translateX(-9.6rem);
+  }
+  .review:nth-child(2) {
+    transform: translateX(-4.8rem);
+  }
+
+  .review__stars {
+    padding-bottom: unset;
+    padding-right: 3.2em;
+  }
+
+  .testimonials {
+    flex-grow: 1;
+    flex-flow: row;
+    gap: 3rem;
+  }
+
+  .testimonial:nth-child(2) {
+    transform: translateY(1.6rem);
+  }
+
+  .testimonial:nth-child(3) {
+    transform: translateY(3.2rem);
+  }
+
+  .testimonial {
+    margin-bottom: unset;
+  }
+}
